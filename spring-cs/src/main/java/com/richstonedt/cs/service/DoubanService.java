@@ -1,6 +1,7 @@
 package com.richstonedt.cs.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.richstonedt.model.param.DoubanParams;
 import com.richstonedt.model.po.Douban;
 
 
@@ -12,6 +13,6 @@ import com.richstonedt.model.po.Douban;
  * @author cheng
  * @since 2020-03-16
  */
-public interface DoubanService extends IService<Douban> {
+public interface DoubanService extends IService<Douban>,BaseService<Douban, DoubanParams> {
 
 }

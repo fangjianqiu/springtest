@@ -2,11 +2,14 @@ package com.richstonedt.rs.Controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.richstonedt.common.util.EntityUtils;
 import com.richstonedt.cs.mapper.DoubanMapper;
 import com.richstonedt.cs.service.DoubanService;
 import com.richstonedt.model.common.ResponseResult;
+import com.richstonedt.model.param.DoubanParams;
 import com.richstonedt.model.po.Douban;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -42,6 +45,18 @@ public class DoubanController {
     @ApiOperation("获取全部豆瓣数据")
     public ResponseResult<List<Douban>> listDouban(){
         return ResponseResult.success(doubanService.list());
+    }
+
+    @GetMapping("/list1")
+    @ApiOperation("条件查询")
+    public List<Douban> listByParams(DoubanParams params){
+        return doubanService.listByParams(params);
+    }
+
+    @GetMapping("/page")
+    @ApiOperation("豆瓣数据分页")
+    public IPage<Douban> listPageByParams(DoubanParams params){
+        return doubanService.listPageByParams(params);
     }
 
     @PostMapping
