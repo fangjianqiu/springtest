@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+# 数据库
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spider?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 123456
+
+# 主要是配置该属性
+mybatis-plus:
+  mapper-locations: classpath:com/ws/study/springboot/mybatis/*/mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: deleted
