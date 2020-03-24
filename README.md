@@ -1,2 +1,2 @@
-# springtest
-springboot + mybatisplus项目，纯练手项目
+# springboot+mybatisplus
+练习mybatisplus
