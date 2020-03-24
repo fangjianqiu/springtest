@@ -1,4 +1,4 @@
-package com.richstonedt.rs.Controller.config;
+package com.richstonedt.rs.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,7 +29,8 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .tags(
-                        new Tag("DoubanController", "豆瓣API")
+                        new Tag("DoubanController", "豆瓣API"),
+                        new Tag("UploadController", "上传功能")
 
                 )
                 .useDefaultResponseMessages(false)
@@ -41,7 +42,7 @@ public class SwaggerConfig {
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("（豆瓣信息API")
+                .title("(豆瓣信息API)")
                 .build();
     }
 }

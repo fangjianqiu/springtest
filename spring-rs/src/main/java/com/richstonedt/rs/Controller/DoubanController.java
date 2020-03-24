@@ -40,21 +40,14 @@ public class DoubanController {
         this.doubanService = doubanService;
     }
 
-
     @GetMapping("/list")
-    @ApiOperation("获取全部豆瓣数据")
-    public ResponseResult<List<Douban>> listDouban(){
-        return ResponseResult.success(doubanService.list());
-    }
-
-    @GetMapping("/list1")
     @ApiOperation("条件查询")
     public List<Douban> listByParams(DoubanParams params){
         return doubanService.listByParams(params);
     }
 
     @GetMapping("/page")
-    @ApiOperation("豆瓣数据分页")
+    @ApiOperation("豆瓣数据分页查询")
     public IPage<Douban> listPageByParams(DoubanParams params){
         return doubanService.listPageByParams(params);
     }
